@@ -21,6 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(OpenCV REQUIRED)
+find_package(Eigen3 REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -163,7 +164,7 @@ include_directories(
 # target_link_libraries(moveToPose ${catkin_LIBRARIES})
 
 add_executable(readPoseHunter src/readPose.cpp)
-target_link_libraries(readPoseHunter ${catkin_LIBRARIES})
+target_link_libraries(readPoseHunter ${catkin_LIBRARIES}${Eigen_LIBRARIES})
 
 # add_executable(moveObject src/moveObject.cpp)
 # target_link_libraries(moveObject ${catkin_LIBRARIES})
